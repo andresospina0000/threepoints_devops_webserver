@@ -14,7 +14,7 @@ jobs:
         if [ -f .github/allow_pull_request.txt ]; then
           echo "env.allow_pull=$(echo true)" >> $GITHUB_ENV
         else
-          echo "Entro al false"
+          echo "env.allow_pull=$(echo true)" >> $GITHUB_ENV
         fi
     - name: Mostrar valor de allow_pull
       run: echo "Valor de allow_pull = ${{ env.allow_pull }}"
