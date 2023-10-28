@@ -16,6 +16,8 @@ jobs:
         else
           echo "$env.allow_pull = false" >> $GITHUB_ENV
         fi
+    - name: Mostrar valor de allow_pull
+      run: echo "Valor de allow_pull = ${{ env.allow_pull }}"
     - name: Permitir pull request
       run: |
         if [ ${{ env.allow_pull }} == true ]; then
