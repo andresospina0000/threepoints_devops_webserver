@@ -2,7 +2,8 @@ name: practica-3-threepoints-ci-cd
 run-name: ${{ github.actor }} - Practica 3 - Threepoints - CI/CD
 on: [push]
 jobs:
-  continous-integration-andres-ospina:    
+  continous-integration-andres-ospina:
+    if: github.ref == 'refs/heads/master' || github.ref.startswith('refs/feature')
     runs-on: ubuntu-latest    
     steps:    
     - name: Pruebas de SAST      
