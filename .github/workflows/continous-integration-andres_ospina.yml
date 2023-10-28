@@ -1,4 +1,4 @@
-name: practica-3-threepoints-ci-cd
+name: practica-3-threepoints-ci-cd-on-push
 run-name: ${{ github.actor }} - Practica 3 - Threepoints - CI/CD
 on: [push]
 jobs:

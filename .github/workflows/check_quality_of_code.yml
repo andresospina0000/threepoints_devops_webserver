@@ -1,4 +1,4 @@
-name: practica-3-threepoints-ci-cd
+name: practica-3-threepoints-ci-cd-on-pull-request
 run-name: ${{ github.actor }} - Practica 3 - On Pull Request Threepoints - CI/CD
 on: [pull_request]
 env:
