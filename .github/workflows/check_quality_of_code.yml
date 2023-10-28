@@ -12,9 +12,9 @@ jobs:
     - name: Existe el archivo Allow Pull Request
       run: |
         if [ -f .github/allow_pull_request.txt ]; then
-          allow_pull = true
+          env.allow_pull = true
         else
-          allow_pull = true
+          env.allow_pull = true
         fi
     - name: Permitir pull request
       run: |
