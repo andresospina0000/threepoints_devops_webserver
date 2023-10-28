@@ -12,9 +12,9 @@ jobs:
     - name: Existe el archivo Allow Pull Request
       run: |
         if [ -f .github/allow_pull_request.txt ]; then
-          $env.allow_pull = true
+          echo "env.allow_pull = true" >> $GITHUB_ENV
         else
-          $env.allow_pull = true
+          echo "env.allow_pull = false" >> $GITHUB_ENV
         fi
     - name: Permitir pull request
       run: |
