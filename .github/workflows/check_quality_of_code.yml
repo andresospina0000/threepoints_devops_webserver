@@ -1,0 +1,29 @@
+name: practica-3-threepoints-ci-cd
+run-name: ${{ github.actor }} - Practica 3 - On Pull Request Threepoints - CI/CD
+on: [pull_request]
+env:
+  allow_pull: false
+jobs:
+  andres-ospina-on-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pruebas de SAST      
+      run: echo "Ejecucion de pruebas de SAST sobre la rama ${GITHUB_REF_NAME}"
+    - name: Existe el archivo Allow Pull Request
+      run: |
+        if [ -f .github/allow_pull_request.txt ]; then
+          allow_pull: true
+        else
+          allow_pull: true
+        fi
+    - name: Permitir pull request
+      run: |
+        if [ ${{ env.allow_pull }} == true ]; then
+          echo "Permitiendo Pull Request"
+        fi
+    - name: Impidiendo pull request
+      run: |
+        if [ ${{ env.allow_pull }} == false ]; then
+          echo "Impidiendo Pull Request"
+          exit 1
+        fi
